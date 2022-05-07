@@ -153,7 +153,9 @@ const btn_send_acceptation = document.getElementById('btn_send_acceptation');
 if (btn_send_acceptation) {
   btn_send_acceptation.addEventListener('click', () => {
     const phone_number = 6285156353146;
-    const text = 'Test';
+    const current_date = new Date();
+    const formatted_current_date = new Intl.DateTimeFormat('id-ID', { dateStyle: 'full', timeStyle: 'medium' }).format(current_date);
+    const text = `Hi Pey, stating by today _${formatted_current_date}_ from your confession to me, *I accept you to be my boyfriend.* We are an official couple now💞%0a%0ahttps://raw.githubusercontent.com/yeppymp/confession/main/assets/images/be_my_gf.png`;
     const wa_link = `https://wa.me/${phone_number}?text=${text}`
     window.open(wa_link, '_blank');
   });
