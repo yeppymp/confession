@@ -8,16 +8,53 @@
 
 * {
   font-family: 'Montserrat', sans-serif !important;
+  box-sizing: border-box;
   font-size: 1rem;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5rem;
 }
 
 body {
-  /* background-color: var(--secondary); */
+  justify-content: center;
   text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.container {
+  width: 480px;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    border-color: var(--dark-grey);
+    border-width: 0 3px 0 3px;
+    border-style: solid;
+  }
+}
+
+#audio_controls {
+  display: none;
+}
+
+#gif_hello,
+#gif_song {
+  height: 462px;
+}
+
+.hide {
+  display: none !important;
 }
 
 .mr-2 {
-  margin-right: 8px;
+  margin-right: 0.2rem;
+}
+.margin-top {
+  margin-top: 1rem;
 }
 
 .title {
@@ -34,16 +71,21 @@ body {
   display: inline-block;
   text-decoration: none;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   font-weight: 600;
   cursor: pointer;
   border: none;
+}
+.button.disabled {
+  cursor: not-allowed;
+  opacity: .75;
 }
 .button-block {
   width: 100%;
   padding: 16px 0;
 }
 .button-primary {
+  border: 1px solid var(--primary);
   background-color: var(--primary);
   color: #fff;
 }
@@ -60,50 +102,72 @@ body {
   transform: translate(50px, 100px);
 }
 
-.words {
-  margin: 16px 0;
+.font-lg {
+  font-size: 1.5rem;
+}
+
+.words-container {
   border: 3px solid var(--dark-grey);
   border-radius: 4px;
-  height: 100px;
+  position: relative;
   overflow: hidden;
-}
-.word {
+  margin: 16px 0;
   height: 100px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: var(--dark-grey);
+}
+.words {
+  position: absolute;
+  padding-top: 32px;
+  width: 100%;
+  top: 0;
   
   /* animation properties */
-  -moz-transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  
-  -moz-animation: my-animation 5s linear infinite;
-  -webkit-animation: my-animation 5s linear infinite;
-  animation: my-animation 5s linear infinite;
+  /* -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite; */
 }
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateY(100%); }
-  to { -moz-transform: translateY(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateY(100%); }
-  to { -webkit-transform: translateY(-100%); }
+.word {
+  color: var(--dark-grey);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 100px;
 }
 
 @keyframes my-animation {
   from {
-    -moz-transform: translateY(100%);
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+    top: 0;
   }
   to {
-    -moz-transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+    top: -616px;
   }
+}
+
+.section.back {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.modal {
+  background: rgba(0, 0, 0, .75);
+  padding: 16px;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .section {
+  background-color: #fff;
+  padding-bottom: 32px;
+  width: 100%;
 }
