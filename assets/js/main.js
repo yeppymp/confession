@@ -155,7 +155,7 @@ if (btn_send_acceptation) {
     const phone_number = 6285156353146;
     const current_date = new Date();
     const formatted_current_date = new Intl.DateTimeFormat('id-ID', { dateStyle: 'full', timeStyle: 'medium' }).format(current_date);
-    const text = `Hi Pey, stating by today _${formatted_current_date}_ from your confession to me, *I accept you to be my boyfriend.* We are an official couple now💞%0a%0ahttps://raw.githubusercontent.com/yeppymp/confession/main/assets/images/be_my_gf.png`;
+    const text = `Hi aa, mulai hari ini _${formatted_current_date}_ dari pernyataan aa, *Aku nerima aa jadi pasangan Iki.* Kita official sekarang💞%0a%0ahttps://raw.githubusercontent.com/yeppymp/confession/main/assets/images/be_my_gf.png`;
     const wa_link = `https://wa.me/${phone_number}?text=${text}`
     window.open(wa_link, '_blank');
   });
@@ -165,7 +165,9 @@ const btn_save_date = document.getElementById('btn_save_date');
 
 if (btn_save_date) {
   btn_save_date.addEventListener('click', () => {
-    const calendar_link = 'https://www.google.com/calendar/render?action=TEMPLATE&text=Ipey%20%26%20Nap%20Anniversary&details=To%20remember%20our%20first%20date!%0A%0AThere%E2%80%99s%20nowhere%20else%20I%E2%80%99d%20rather%20be%20than%20right%20here%20by%20your%20side%20with%20your%20hand%20in%20mine.%0A%0AEvery%20love%20story%20is%20special,%20unique,%20and%20beautiful.%20But%20ours%20is%20my%20favorite.%0A%0AAnniversary%20cheers!%20%F0%9F%A5%B3%20%20&dates=20220508/20220508&ctz=Asia/Jakarta&crm=AVAILABLE&add=yeppymp@gmail.com&recur=RRULE:FREQ=YEARLY';
+    const ISODate = new Date().toISOString();
+    const date = ISODate.split('T')[0].replaceAll('-', '');
+    const calendar_link = `https://www.google.com/calendar/render?action=TEMPLATE&text=Yeppy%20%26%Kiki%20Anniversary&details=To%20remember%20our%20first%20date!%0A%0AThere%E2%80%99s%20nowhere%20else%20I%E2%80%99d%20rather%20be%20than%20right%20here%20by%20your%20side%20with%20your%20hand%20in%20mine.%0A%0AEvery%20love%20story%20is%20special,%20unique,%20and%20beautiful.%20But%20ours%20is%20my%20favorite.%0A%0AAnniversary%20cheers!%20%F0%9F%A5%B3%20%20&dates=${date}/${date}&ctz=Asia/Jakarta&crm=AVAILABLE&add=yeppymp@gmail.com&recur=RRULE:FREQ=YEARLY`;
     window.open(calendar_link, '_blank');
   });
 }
